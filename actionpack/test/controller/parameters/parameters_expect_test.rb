@@ -264,4 +264,9 @@ class ParametersExpectTest < ActiveSupport::TestCase
       end
     end
   end
+
+  test "anticipate is an alias for expect" do
+    assert_equal @params.method(:expect), @params.method(:anticipate)
+    assert_equal @params.method(:expect!), @params.method(:anticipate!)
+  end
 end
